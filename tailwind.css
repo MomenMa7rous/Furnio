@@ -2,8 +2,23 @@
 
 @theme {
     --font-poppins: Poppins, sans-serif;
+
+    --color-primary: #B88E2F;
+    --color-secondary: #9F9F9F;
+    --color-secbg: #FFF3E3;
+    
+    --breakpoint-sm: 360px;
+    --breakpoint-md: 480px;
+    --breakpoint-lg: 768px;
+    --breakpoint-xl: 992px;
+    --breakpoint-2xl: 1200px;
+    --breakpoint-3xl: 1400px;
 }
 
 * {
     font-family: Poppins, sans-serif;
+}
+
+.container {
+    @apply w-full m-auto px-3 sm:max-w-[360px] md:max-w-[480px] lg:max-w-[768px] xl:max-w-[992px] 2xl:max-w-[1200px] 3xl:max-w-[1400px]
 }

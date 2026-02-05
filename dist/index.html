@@ -6,11 +6,101 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Furnio | Homepage</title>
 </head>
 <body>
-    
+    <header class="sticky top-0 left-0 w-full">
+        <div class="w-full h-dvh fixed top-0 left-0 bg-black/20 z-10 transition-all duration-300 translate-x-full" id="overlay"></div>
+        <div class="container py-2 xl:py-4 flex items-center justify-between gap-2 bg-white">
+            <a href="#">
+
+                <img src="./imgs/full_logo.svg" alt="Furnio" class="max-w-[150px]">
+            </a>
+            <button class="text-xl cursor-pointer xl:hidden">
+                <i class="fa-solid fa-bars" id="navMenuBtn"></i>
+            </button>
+            <ul class="fixed left-0 top-0 w-[200px] h-dvh py-2 bg-white shadow-xs z-50 -translate-x-full transition-all duration-300" id="navMenu">
+                <li>
+                    <button class="py-2 px-4 block text-2xl cursor-pointer">
+                        <i class="fa-regular fa-circle-xmark" id="navCloseBtn"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-4 block transition-all duration-200 hover:pl-5 hover:bg-primary/10">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-4 block transition-all duration-200 hover:pl-5 hover:bg-primary/10">Shop</a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-4 block transition-all duration-200 hover:pl-5 hover:bg-primary/10">About</a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-4 block transition-all duration-200 hover:pl-5 hover:bg-primary/10">Contact</a>
+                </li>
+                <hr class="my-4">
+                <ul class="grid grid-cols-2 place-items-center gap-2 px-4 py-2">
+                    <li class="w-full h-full">
+                        <a href="#" class="text-lg transition-all duration-200 bg-primary/10 grid place-items-center p-2 hover:bg-primary/15">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                    </li>
+                    <li class="w-full h-full">
+                        <a href="#" class="text-lg transition-all duration-200 bg-primary/10 grid place-items-center p-2 hover:bg-primary/15">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </li>
+                    <li class="w-full h-full">
+                        <a href="#" class="text-lg transition-all duration-200 bg-primary/10 grid place-items-center p-2 hover:bg-primary/15">
+                            <i class="fa-regular fa-heart"></i>
+                        </a>
+                    </li>
+                    <li class="w-full h-full">
+                        <a href="#" class="text-lg transition-all duration-200 bg-primary/10 grid place-items-center p-2 hover:bg-primary/15">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+            <ul class="items-center justify-between gap-4 hidden xl:flex">
+                <li>
+                    <a href="#" class="py-2 px-4 block transition-all duration-200 hover:bg-primary/10">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-4 block transition-all duration-200 hover:bg-primary/10">Shop</a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-4 block transition-all duration-200 hover:bg-primary/10">About</a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-4 block transition-all duration-200 hover:bg-primary/10">Contact</a>
+                </li>
+            </ul>
+            <ul class="items-center justify-between gap-5 hidden xl:flex">
+                <li>
+                    <a href="#" class="text-lg">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-lg">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-lg">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-lg">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
     <script src="./js/main.js"></script>
 </body>
 </html>
