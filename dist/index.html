@@ -11,9 +11,9 @@
     <title>Furnio | Homepage</title>
 </head>
 <body>
-    <header class="sticky top-0 left-0 w-full">
-        <div class="w-full h-dvh fixed top-0 left-0 bg-black/20 z-10 transition-all duration-300 translate-x-full" id="overlay"></div>
-        <div class="container py-2 xl:py-4 flex items-center justify-between gap-2 bg-white">
+    <header class="sticky top-0 left-0 w-full bg-white z-30">
+        <div class="w-full h-dvh fixed top-0 left-0 bg-black/20 z-40 transition-all duration-300 translate-x-full" id="overlay"></div>
+        <div class="container py-2 xl:py-4 flex items-center justify-between gap-2">
             <a href="#">
 
                 <img src="./imgs/full_logo.svg" alt="Furnio" class="max-w-[150px]">
@@ -101,6 +101,20 @@
             </ul>
         </div>
     </header>
+    <section class="bg-[url(../imgs/main_hero_bg.png)] bg-cover bg-center">
+        <div class="container grid place-items-center py-28 xl:py-36 xl:place-items-end">
+            <div class="bg-secbg p-8 z-10 text-center flex flex-col gap-4 xl:text-start xl:max-w-lg">
+                <h2 class="tracking-[3px] font-medium text-md">New Arrival</h2>
+                <h1 class="text-3xl leading-12 md:text-5xl md:leading-16 text-primary font-bold">
+                    Discover Our<br>New Collection
+                </h1>
+                <p class="leading-5 text-xs">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+                </p>
+                <a href="#" class="py-4 px-8 bg-primary text-white uppercase font-bold text-xs block w-fit m-auto transition-all duration-200 hover:bg-primary-dark xl:m-0">BUY NOW</a>
+            </div>
+        </div>
+    </section>
     <script src="./js/main.js"></script>
 </body>
 </html>
