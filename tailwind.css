@@ -17,6 +17,9 @@
     --breakpoint-2xl: 1200px;
 }
 
+@custom-variant hover (&:hover);
+
+
 * {
     font-family: Poppins, sans-serif;
 }
