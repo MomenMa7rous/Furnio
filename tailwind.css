@@ -19,7 +19,6 @@
 
 @custom-variant hover (&:hover);
 
-
 * {
     font-family: Poppins, sans-serif;
 }
