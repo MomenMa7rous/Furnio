@@ -1,16 +1,842 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imgs/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Furnio | Shop</title>
 </head>
+
 <body>
-    
+    <header class="sticky top-0 left-0 w-full bg-white z-30">
+        <div class="w-full h-dvh fixed top-0 left-0 bg-black/20 z-40 transition-all duration-300 translate-x-full"
+            id="overlay"></div>
+        <div class="container py-2 xl:py-4 flex items-center justify-between gap-2">
+            <a href="#">
+
+                <img src="./imgs/full_logo.svg" alt="Furnio" class="max-w-[150px]">
+            </a>
+            <button class="text-xl cursor-pointer xl:hidden">
+                <i class="fa-solid fa-bars" id="navMenuBtn"></i>
+            </button>
+            <ul class="fixed left-0 top-0 w-[200px] h-dvh py-2 bg-white shadow-xs z-50 -translate-x-full transition-all duration-300"
+                id="navMenu">
+                <li>
+                    <button class="py-2 px-4 block text-2xl cursor-pointer">
+                        <i class="fa-regular fa-circle-xmark" id="navCloseBtn"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="./"
+                        class="py-2 px-4 block transition-all duration-200 hover:pl-5 hover:bg-primary/10">Home</a>
+                </li>
+                <li>
+                    <a href="./shop.html"
+                        class="py-2 px-4 block transition-all duration-200 hover:pl-5 hover:bg-primary/10">Shop</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="py-2 px-4 block transition-all duration-200 hover:pl-5 hover:bg-primary/10">About</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="py-2 px-4 block transition-all duration-200 hover:pl-5 hover:bg-primary/10">Contact</a>
+                </li>
+                <hr class="my-4">
+                <ul class="grid grid-cols-2 place-items-center gap-2 px-4 py-2">
+                    <li class="w-full h-full">
+                        <a href="#"
+                            class="text-lg transition-all duration-200 bg-primary/10 grid place-items-center p-2 hover:bg-primary/15">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                    </li>
+                    <li class="w-full h-full">
+                        <a href="#"
+                            class="text-lg transition-all duration-200 bg-primary/10 grid place-items-center p-2 hover:bg-primary/15">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </li>
+                    <li class="w-full h-full">
+                        <a href="#"
+                            class="text-lg transition-all duration-200 bg-primary/10 grid place-items-center p-2 hover:bg-primary/15">
+                            <i class="fa-regular fa-heart"></i>
+                        </a>
+                    </li>
+                    <li class="w-full h-full">
+                        <a href="#"
+                            class="text-lg transition-all duration-200 bg-primary/10 grid place-items-center p-2 hover:bg-primary/15">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+            <ul class="items-center justify-between gap-4 hidden xl:flex">
+                <li>
+                    <a href="./" class="py-2 px-4 block transition-all duration-200 hover:bg-primary/10">Home</a>
+                </li>
+                <li>
+                    <a href="./shop.html"
+                        class="py-2 px-4 block transition-all duration-200 hover:bg-primary/10">Shop</a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-4 block transition-all duration-200 hover:bg-primary/10">About</a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 px-4 block transition-all duration-200 hover:bg-primary/10">Contact</a>
+                </li>
+            </ul>
+            <ul class="items-center justify-between gap-5 hidden xl:flex">
+                <li>
+                    <a href="#" class="text-lg">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-lg">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-lg">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-lg">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Shop Hero -->
+    <section
+        class="relative bg-[url(../imgs/main_hero_bg.png)] bg-cover bg-center h-[300px] flex items-center justify-center">
+        <div class="absolute inset-0 bg-white/50 backdrop-blur-sm z-0"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center gap-2">
+            <h1 class="text-4xl md:text-5xl font-medium text-black">Shop</h1>
+            <p class="text-sm font-medium"><a href="index.html">Home</a> <i
+                    class="fa-solid fa-angle-right mx-1 text-xs"></i> Shop</p>
+        </div>
+    </section>
+
+    <!-- Toolbar -->
+    <div class="bg-[#F9F1E7] py-6">
+        <div class="container flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-4">
+            <div class="flex items-center justify-center gap-6">
+                <div class="flex items-center gap-4 sm:gap-6">
+                    <button class="flex items-center gap-2 text-xl"><i class="fa-solid fa-sliders"></i> <span
+                            class="text-base font-normal">Filter</span></button>
+                    <button class="text-xl"><i class="fa-solid fa-grip"></i></button>
+                    <button class="text-xl"><i class="fa-solid fa-list"></i></button>
+                </div>
+                <div class="hidden sm:flex items-center border-l-2 border-gray-400 pl-6">
+                    <p class="text-sm text-title">Showing 1-16 of 32 results</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-4 sm:gap-6">
+                <div class="flex items-center gap-4">
+                    <span class="text-sm">Show</span>
+                    <input type="text" value="16"
+                        class="w-10 text-sm h-8 bg-white text-center text-gray-500 outline-none">
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-sm">Sort by</span>
+                    <div class="relative">
+                        <select
+                            class="w-30 text-sm h-8 bg-white pl-4 pr-10 text-gray-500 outline-none appearance-none cursor-pointer">
+                            <option value="default">Default</option>
+                            <option value="price-low">Price Low</option>
+                            <option value="price-high">Price High</option>
+                        </select>
+                        <i
+                            class="fa-solid fa-angle-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products -->
+    <section>
+        <div class="container">
+            <div class="grid gap-4 mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product1.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Syltherine</h2>
+                        <p class="text-par font-medium text-sm">Stylish cafe chair</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 2.500.000
+                            <span class="text-par/80 line-through text-sm font-normal">Rp 3.500.000</span>
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product2.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Leviosa</h2>
+                        <p class="text-par font-medium text-sm">Stylish cafe chair</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 2.500.000
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product3.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Lolito</h2>
+                        <p class="text-par font-medium text-sm">Luxury big sofa</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 7.000.000
+                            <span class="text-par/80 line-through text-sm font-normal">Rp 14.000.000</span>
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product4.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Respira</h2>
+                        <p class="text-par font-medium text-sm">Outdoor bar table and stool</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 500.000
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product5.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Grifo</h2>
+                        <p class="text-par font-medium text-sm">Night lamp</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 1.500.000
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product6.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Muggo</h2>
+                        <p class="text-par font-medium text-sm">Small mug</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 150.000
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product7.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Pingky</h2>
+                        <p class="text-par font-medium text-sm">Cute bed set</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 7.000.000
+                            <span class="text-par/80 line-through text-sm font-normal">Rp 14.000.000</span>
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product8.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Potty</h2>
+                        <p class="text-par font-medium text-sm">Minimalist flower pot</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 500.000
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product1.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Syltherine</h2>
+                        <p class="text-par font-medium text-sm">Stylish cafe chair</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 2.500.000
+                            <span class="text-par/80 line-through text-sm font-normal">Rp 3.500.000</span>
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product2.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Leviosa</h2>
+                        <p class="text-par font-medium text-sm">Stylish cafe chair</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 2.500.000
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product3.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Lolito</h2>
+                        <p class="text-par font-medium text-sm">Luxury big sofa</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 7.000.000
+                            <span class="text-par/80 line-through text-sm font-normal">Rp 14.000.000</span>
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product4.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Respira</h2>
+                        <p class="text-par font-medium text-sm">Outdoor bar table and stool</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 500.000
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product5.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Grifo</h2>
+                        <p class="text-par font-medium text-sm">Night lamp</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 1.500.000
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product6.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Muggo</h2>
+                        <p class="text-par font-medium text-sm">Small mug</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 150.000
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product7.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Pingky</h2>
+                        <p class="text-par font-medium text-sm">Cute bed set</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 7.000.000
+                            <span class="text-par/80 line-through text-sm font-normal">Rp 14.000.000</span>
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col group relative">
+                    <div class="grid place-items-center overflow-hidden w-full">
+                        <img src="./imgs/product8.png" alt="product" class="w-full">
+                    </div>
+                    <div class="bg-[#F4F5F7] p-4 flex flex-col gap-2">
+                        <h2 class="text-2xl text-title font-semibold">Potty</h2>
+                        <p class="text-par font-medium text-sm">Minimalist flower pot</p>
+                        <h2 class="flex gap-4 font-medium text-xl items-center">
+                            Rp 500.000
+                        </h2>
+                    </div>
+                    <div
+                        class="w-full h-full bg-title/80 text-white z-10 absolute top-0 left-0 flex justify-center items-center flex-col gap-4 opacity-0 transition-all duration-300 hover:opacity-100">
+                        <button
+                            class="cursor-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">Add
+                            To Cart</button>
+                        <a href="#"
+                            class="cursour-pointer bg-white text-primary py-3 px-8 font-semibold text-sm transition-all duration-200 hover:bg-primary hover:text-white">More
+                            Info</a>
+                        <div class="flex gap-5">
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Share
+                            </button>
+                            <a href="#" class=" font-normal text-xs cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Compare
+                            </a>
+                            <button class="flex gap-1 items-center font-normal text-xs cursor-pointer">
+                                <i class="fa-regular fa-heart"></i>
+                                Like
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="flex items-center justify-center gap-4 mt-10">
+                <button class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded">1</button>
+                <button
+                    class="w-12 h-12 flex items-center justify-center bg-[#F9F1E7] text-title transition hover:bg-primary hover:text-white rounded">2</button>
+                <button
+                    class="w-12 h-12 flex items-center justify-center bg-[#F9F1E7] text-title transition hover:bg-primary hover:text-white rounded">3</button>
+                <button
+                    class="px-6 h-12 flex items-center justify-center bg-[#F9F1E7] text-title transition hover:bg-primary hover:text-white rounded">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="bg-[#FAF3EA] py-20">
+        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="flex items-center gap-4">
+                <i class="fa-solid fa-trophy text-5xl text-title"></i>
+                <div>
+                    <h3 class="text-title font-semibold text-xl md:text-2xl">High Quality</h3>
+                    <p class="text-par text-sm">crafted from top materials</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <i class="fa-solid fa-circle-check text-5xl text-title"></i>
+                <div>
+                    <h3 class="text-title font-semibold text-xl md:text-2xl">Warranty Protection</h3>
+                    <p class="text-par text-sm">Over 2 years</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <i class="fa-solid fa-box-open text-5xl text-title"></i>
+                <div>
+                    <h3 class="text-title font-semibold text-xl md:text-2xl">Free Shipping</h3>
+                    <p class="text-par text-sm">Order over 150 $</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <i class="fa-solid fa-headset text-5xl text-title"></i>
+                <div>
+                    <h3 class="text-title font-semibold text-xl md:text-2xl">24 / 7 Support</h3>
+                    <p class="text-par text-sm">Dedicated support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-200">
+        <div class="container py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-4">
+                <div class="flex flex-col gap-10 border-b border-gray-200 pb-8 lg:border-none lg:pb-0">
+                    <h2 class="text-2xl font-bold text-title">Funiro.</h2>
+                    <p class="text-gray-400 text-sm max-w-[250px]">
+                        400 University Drive Suite 200 Coral Gables,<br>
+                        FL 33134 USA
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-10 border-b border-gray-200 pb-8 lg:border-none lg:pb-0">
+                    <h3 class="text-gray-400 font-medium text-sm">Links</h3>
+                    <ul class="flex flex-col gap-6 font-medium text-title text-sm">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-10 border-b border-gray-200 pb-8 sm:border-none sm:pb-0">
+                    <h3 class="text-gray-400 font-medium text-sm">Help</h3>
+                    <ul class="flex flex-col gap-6 font-medium text-title text-sm">
+                        <li><a href="#">Payment Options</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policies</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-10">
+                    <h3 class="text-gray-400 font-medium text-sm">Newsletter</h3>
+                    <form class="flex flex-col xl:flex-row gap-4 xl:items-center">
+                        <input type="email" placeholder="Email Address"
+                            class="border-b border-black text-sm py-1 focus:outline-none w-full lg:max-w-[200px] text-gray-500 placeholder-gray-400 bg-transparent">
+                        <button type="submit"
+                            class="cursor-pointer font-bold text-sm border-b border-black py-1 uppercase text-title whitespace-nowrap w-full lg:w-auto">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 pt-8 mt-12">
+                <p class="text-title text-[15px]">2023 furino. All rights reverved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
